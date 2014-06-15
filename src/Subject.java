@@ -35,4 +35,16 @@ public class Subject {
     public void setHowMuchHoursStudentWorks(int howMuchHoursStudentWorks) {
         this.howMuchHoursStudentWorks = howMuchHoursStudentWorks;
     }
+
+    public void passExams(Subject subjectOnWitchExamPasses){
+
+    }
+
+    public void outputInformationAboutSubject(Subject subjectToOutputInformation){
+
+    }
+
+    public void giveStudentMarkForThisSubject(Subject subjectOnWitchStudentNeededMark){
+
+    }
 }

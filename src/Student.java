@@ -32,4 +32,25 @@ public class Student {
     public void setStudentSubjects(Subject studentSubjects) {
         this.studentSubjects = studentSubjects;
     }
+
+    public void toStudy(Subject subjectThatWillBeStudy, int studyTime){
+
+    }
+
+    public void addSubjectToStudyList(Subject subjectToAdd){
+
+    }
+
+    public void deleteLastSubjectFromStudyList(){
+
+    }
+
+    public void outputAllInformationAboutSubjects(){
+
+    }
+
+    public void outputAverageMarkFromAllSubjects(){
+
+    }
 }
+
