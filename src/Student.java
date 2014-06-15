@@ -1,9 +1,13 @@
 public class Student {
     private String studentName;
     private Address studentAddress;
-    private Subject studentSubjects;
     public int numberOfStudentSubjects;
     Subject [] subjects = new Subject[10];
+
+    public Student(String studentName, Address studentAddress) {
+        this.studentName = studentName;
+        this.studentAddress = studentAddress;
+    }
 
     public int getNumberOfStudentSubjects() {
         return numberOfStudentSubjects;
@@ -17,10 +21,6 @@ public class Student {
         return studentAddress;
     }
 
-    public Subject getStudentSubjects() {
-        return studentSubjects;
-    }
-
     public void setStudentName(String studentName) {
         this.studentName = studentName;
     }
@@ -29,28 +29,38 @@ public class Student {
         this.studentAddress = studentAddress;
     }
 
-    public void setStudentSubjects(Subject studentSubjects) {
-        this.studentSubjects = studentSubjects;
-    }
-
     public void toStudy(Subject subjectThatWillBeStudy, int studyTime){
+        subjectThatWillBeStudy.setHowMuchHoursStudentWorks((subjectThatWillBeStudy.getHowMuchHoursStudentWorks()+studyTime));
+        System.out.println("You study well for " + studyTime + " hours.");
+        System.out.println("To pass exams you need to study " + (subjectThatWillBeStudy.getHowMuchHoursInSemestr()-subjectThatWillBeStudy.getHowMuchHoursStudentWorks()) + " hours more");
 
     }
 
     public void addSubjectToStudyList(Subject subjectToAdd){
-
+        subjects[numberOfStudentSubjects++] = subjectToAdd;
     }
 
     public void deleteLastSubjectFromStudyList(){
+        subjects[--numberOfStudentSubjects] = null;
 
     }
 
     public void outputAllInformationAboutSubjects(){
+        for (int i = 0;  i<numberOfStudentSubjects; i++)
+            if (subjects[i]!=null){
+                subjects[i].outputInformationAboutSubject(subjects[i]);
+            }
 
     }
 
     public void outputAverageMarkFromAllSubjects(){
-
+        float averageMark = 0;
+        for (int i = 0;  i<numberOfStudentSubjects; i++)
+            if (subjects[i]!=null){
+                averageMark+=subjects[i].getStudentMark();
+            }
+        averageMark=averageMark/numberOfStudentSubjects-1;
+        System.out.println("Average mark: " + averageMark);
     }
 }
 

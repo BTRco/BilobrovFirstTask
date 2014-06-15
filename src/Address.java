@@ -4,6 +4,13 @@ public class Address {
     private String addressStreet;
     private String addressHouseNumber;
 
+    public Address(String addressCountry, String addressCity, String addressStreet, String addressHouseNumber) {
+        this.addressCountry = addressCountry;
+        this.addressCity = addressCity;
+        this.addressStreet = addressStreet;
+        this.addressHouseNumber = addressHouseNumber;
+    }
+
     public String getAddressCountry() {
         return addressCountry;
     }

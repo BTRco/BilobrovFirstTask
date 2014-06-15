@@ -4,6 +4,11 @@ public class Subject {
     private int howMuchHoursStudentWorks;
     private int studentMark = 1;
 
+    public Subject(String subjectName, int howMuchHoursInSemestr) {
+        this.subjectName = subjectName;
+        this.howMuchHoursInSemestr = howMuchHoursInSemestr;
+    }
+
     public int getStudentMark() {
         return studentMark;
     }
@@ -37,14 +42,24 @@ public class Subject {
     }
 
     public void passExams(Subject subjectOnWitchExamPasses){
+        if (subjectOnWitchExamPasses.getHowMuchHoursInSemestr() > subjectOnWitchExamPasses.getHowMuchHoursStudentWorks()){
+            System.out.println("You lazy! Study more time! You need to study " + (subjectOnWitchExamPasses.getHowMuchHoursInSemestr()-subjectOnWitchExamPasses.getHowMuchHoursStudentWorks()) + " hours!");
+        } else {
+            System.out.println("You pass exams good!");
+            subjectOnWitchExamPasses.setStudentMark(4);
+        }
 
     }
 
-    public void outputInformationAboutSubject(Subject subjectToOutputInformation){
-
+    public static void outputInformationAboutSubject(Subject subjectToOutputInformation){
+        System.out.println("Subject name: " + subjectToOutputInformation.getSubjectName());
+        System.out.println("How much hours in semester: " + subjectToOutputInformation.getHowMuchHoursInSemestr());
     }
 
     public void giveStudentMarkForThisSubject(Subject subjectOnWitchStudentNeededMark){
+        System.out.println("You have " + subjectOnWitchStudentNeededMark.getStudentMark() + "mark on " + subjectOnWitchStudentNeededMark.getSubjectName());
 
     }
+
+
 }
