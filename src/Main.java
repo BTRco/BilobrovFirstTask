@@ -21,7 +21,13 @@ public class Main {
         bogdanSkochynskyi.toStudy(mathematic, 70);
         bogdanSkochynskyi.toStudy(physics, 45);
 
-        programming.giveStudentMarkForThisSubject(programming);
+        programming.giveStudentMarkForThisSubject();
+
+        bogdanSkochynskyi.subjects[1].passExams();
+
+        bogdanSkochynskyi.subjects[1].giveStudentMarkForThisSubject();
+
+        bogdanSkochynskyi.outputAverageMarkFromAllSubjects();
 
 
     }

@@ -9,6 +9,10 @@ public class Student {
         this.studentAddress = studentAddress;
     }
 
+    public Subject[] getSubjects() {
+        return subjects;
+    }
+
     public int getNumberOfStudentSubjects() {
         return numberOfStudentSubjects;
     }
@@ -59,7 +63,7 @@ public class Student {
             if (subjects[i]!=null){
                 averageMark+=subjects[i].getStudentMark();
             }
-        averageMark=averageMark/numberOfStudentSubjects-1;
+        averageMark=averageMark/numberOfStudentSubjects;
         System.out.println("Average mark: " + averageMark);
     }
 }
