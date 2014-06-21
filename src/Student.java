@@ -1,12 +1,52 @@
 public class Student {
     private String studentName;
     private Address studentAddress;
+    private int age;
     public int numberOfStudentSubjects;
     Subject [] subjects = new Subject[10];
 
     public Student(String studentName, Address studentAddress) {
         this.studentName = studentName;
         this.studentAddress = studentAddress;
+    }
+
+    public Student(String studentName, int age) {
+        this.studentName = studentName;
+        this.age = age;
+    }
+
+    @Override
+    public String toString() {
+        return studentName + " " + age;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null){
+            return false;
+        }
+
+        if(this == obj){
+            return true;
+        }
+
+        if (!(obj instanceof Student)){
+            return false;
+        }
+
+        Student stud = (Student) obj;
+        if ((stud).getAge() == this.getAge()){
+            if ((stud).getStudentName().equals(this.getStudentName())){
+                return true;
+            }
+        }
+        
+        return false;
     }
 
     public Subject[] getSubjects() {
